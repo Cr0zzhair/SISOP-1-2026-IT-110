@@ -1341,4 +1341,4 @@ done
 
 CONGRATSS kita sudah berhasil membuat sistem pendataan kost Slebew
 
-![image.png](img/omg.png)
+![image.png](img/plss.png)
