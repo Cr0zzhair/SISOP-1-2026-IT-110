@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATABASE="data/database.csv"
+DATABASE="data/penghuni.csv"
 HISTORY="sampah/history_hapus.csv"
 LAPORAN="rekap/laporan_bulanan.txt"
 TAGIHAN_LOG="log/tagihan.log"

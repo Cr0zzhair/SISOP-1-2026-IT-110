@@ -1042,7 +1042,7 @@ sehingga jika kita semua gabungkan codenya akan seperti ini
 ```bash
 #!/bin/bash
 
-DATABASE="database.csv"
+DATABASE="penghuni.csv"
 HISTORY="sampah/history_hapus.csv"
 LAPORAN="rekap/laporan_bulanan.txt"
 TAGIHAN_LOG="log/tagihan.log"
@@ -1341,4 +1341,4 @@ done
 
 CONGRATSS kita sudah berhasil membuat sistem pendataan kost Slebew
 
-![image.png](img/image%2022.png)
+![image.png](img/omg.png)
