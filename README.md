@@ -55,10 +55,10 @@ Yayy kita sudah berhasil membantu Rusdi untuk menghitung seluruh penumpang yang 
 b) setelah mengetahui total penumpang Rusdi berpikir lebih jauh  ia pun mengalisis gerbong untuk mengetahui berapa banyak gerbong unik yang digunakan dalam perjalanan tersebut, untuk membantu Rusdi maka kita akan menghitung berapa jumlahg angka unik gerbong tiap kereta maka kita harus menghitung baris kolom ke `4` yang berisi angka unik gerbong dan kita membutuhkan command tambahan yaitu `length(gerbong)` untuk hitung berapa banyak key unik di array tersebut
 
 ```bash
-awk -F, 'NR > 1 {gerbong[$4]++} END {print "Jumlah gerbong yang beroperasi: " length(gerbong)}' passenger.csv
+awk -F',' 'NR>1 {gerbong[$4]=1} END {print "Jumlah gerbong penumpang KANJ adalah " length(gerbong)}' passenger.csv
 ```
 
-- `gerbong[$4]++` → pakai kolom 4 sebagai **key array**, otomatis duplikat diabaikan
+- `gerbong[$4]=1` → simpan nama gerbong sebagai key array
 - `length(gerbong)` → hitung berapa banyak key unik di array tersebut
 
 ![image.png](img/image%201.png)
