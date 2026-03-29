@@ -61,7 +61,7 @@ awk -F',' 'NR>1 {gsub(/\r/, ""); gerbong[$4]=1} END {print "Jumlah gerbong penum
 - `gerbong[$4]=1` → simpan nama gerbong sebagai key array
 - `length(gerbong)` → hitung berapa banyak key unik di array tersebut
 
-![image.png](img/SS1.png)
+![image.png](img/SS5.png)
 
 Yayy kita sudah berhasil membantu Rusdi untuk menghitung berapa jumlah code unik (angka unik) pada setiap gerbong
 
