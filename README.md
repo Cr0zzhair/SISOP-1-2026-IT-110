@@ -61,7 +61,7 @@ awk -F',' 'NR>1 {gerbong[$4]=1} END {print "Jumlah gerbong penumpang KANJ adalah
 - `gerbong[$4]=1` → simpan nama gerbong sebagai key array
 - `length(gerbong)` → hitung berapa banyak key unik di array tersebut
 
-![image.png](img/image%201.png)
+![image.png](img/SS1.png)
 
 Yayy kita sudah berhasil membantu Rusdi untuk menghitung berapa jumlah code unik (angka unik) pada setiap gerbong
 
@@ -91,7 +91,7 @@ lagi dan lagi kita sudah berhasil membantu Rusdi
 d) Tak berhenti disitu Rusdi ingin mengetahui profil umum penumpang hari itu dan dia bertanya2 berapa jumlah rata rata usia penumpang KANJ, untuk membantu Rusdi maka kita akan membuat awk sederhana dengan menjumlahkan seluruh umur penumpang dibagi jumlah mereka sehingga kita harus mengetahui terlebih dahulu, berhubung udah maka kita akan lebih mudah mendapatkan rata rata
 
 ```bash
-awk -F, 'NR > 1 {sum += $2 / 208} END {printf "Rata-rata usia penumpang adalah %.0f tahun\n", sum}' passenger.csv
+awk -F',' 'NR>1 {sum += $2} END {print "Rata-rata usia penumpang adalah " int(sum/208) " tahun"}' passenger.csv
 ```
 
 **`F,`** → pemisah kolom = koma
@@ -102,7 +102,7 @@ awk -F, 'NR > 1 {sum += $2 / 208} END {printf "Rata-rata usia penumpang adalah %
 
 **`printf "%.0f"`** → cetak tanpa desimal, dibulatkan matematis
 
-![image.png](img/image%203.png)
+![image.png](img/SS2.png)
 
 well played
 
@@ -138,9 +138,9 @@ BEGIN {
 NR == 1 { next }
 
 pilihan == "a" { count++ }
-pilihan == "b" { gerbong[$4]++ }
+pilihan == "b" { gerbong[$4]=1 }
 pilihan == "c" { if ($2 > max) { max = $2; oldest = $1 } }
-pilihan == "d" { sum += $2 / 208 }
+pilihan == "d" { sum += $2}
 pilihan == "e" && $3 == "Business" { business++ }
 
 END {
@@ -154,7 +154,7 @@ END {
         print oldest " adalah penumpang kereta tertua dengan usia " max " tahun"
 
     else if (pilihan == "d")
-        printf "Rata rata usia penumpang adalah %.0f tahun\n", sum
+        print "Rata-rata usia penumpang adalah " int(sum/208) " tahun"
 
     else if (pilihan == "e")
         print "Jumlah penumpang business class ada " business " orang"
@@ -187,7 +187,7 @@ BEGIN {
 
 selebihnya percabangan biasa yang tidak perlu saya jelaskan 🙂 , kesimpulannya BEGIN akan bergabung dengan END yang dipilih
 
-![image.png](img/image%205.png)
+![image.png](img/SS3.png)
 
 CONGRATSS 🥳🎉 
 
